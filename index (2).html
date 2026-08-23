@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meraf Haileslassie — Public Health Policy Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Abstract link + modal — scoped, self-contained, doesn't touch style.css */
+  .abstract-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    color:inherit;
+    opacity:0.75;
+    background:none;
+    border:none;
+    border-bottom:1px solid currentColor;
+    padding:0 0 1px;
+    cursor:pointer;
+    transition:opacity .15s;
+  }
+  .abstract-link:hover{opacity:1;}
+  .abstract-link::after{content:"→";transition:transform .15s;}
+  .abstract-link:hover::after{transform:translateX(3px);}
+
+  .abstract-overlay{
+    position:fixed; inset:0;
+    background:rgba(20,22,20,0.55);
+    display:none;
+    align-items:flex-start;
+    justify-content:center;
+    padding:8vh 20px 40px;
+    z-index:200;
+    overflow-y:auto;
+  }
+  .abstract-overlay.open{display:flex;}
+  .abstract-modal{
+    background:#F6F3EC;
+    max-width:600px;
+    width:100%;
+    border-radius:2px;
+    padding:36px 34px 32px;
+    position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,0.25);
+  }
+  .abstract-modal .am-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:#A8763E;
+    margin:0 0 8px;
+  }
+  .abstract-modal h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.35rem;
+    margin:0 0 18px;
+    padding-right:24px;
+    line-height:1.25;
+  }
+  .abstract-modal p{
+    font-size:14.5px;
+    line-height:1.65;
+    color:#3A423F;
+    margin:0;
+  }
+  .abstract-close{
+    position:absolute;
+    top:20px; right:20px;
+    width:28px; height:28px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:18px;
+    line-height:1;
+    color:#3A423F;
+    opacity:0.6;
+  }
+  .abstract-close:hover{opacity:1;}
+</style>
+</head>
+<body>
+
+<div class="contour-field" aria-hidden="true">
+<svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+<path class="contour c1" d="M-50,650 C150,600 250,700 400,660 C550,620 650,720 800,670 C950,620 1100,700 1250,650 C1350,620 1420,640 1450,630" />
+<path class="contour c2" d="M-50,600 C180,540 280,660 420,610 C560,560 660,680 810,620 C960,560 1090,650 1250,600 C1350,570 1420,590 1450,580" />
+<path class="contour c3" d="M-50,540 C200,470 300,610 440,550 C580,490 670,630 820,560 C970,490 1080,590 1250,540 C1350,510 1420,530 1450,520" />
+<path class="contour c4" d="M-50,470 C220,390 320,550 460,480 C600,410 680,570 830,490 C980,410 1070,520 1250,470 C1350,440 1420,460 1450,450" />
+<path class="contour c5" d="M-50,390 C240,300 340,480 480,400 C620,320 690,500 840,410 C990,320 1060,440 1250,390 C1350,360 1420,380 1450,370" />
+</svg>
+</div>
+
+<header class="hero">
+<div class="wrap">
+<p class="eyebrow">Elev. field notes — Storglaciären, Sweden, 68°N</p>
+<h1>Meraf<br>Haileslassie</h1>
+<p class="hero-tagline">I use well-established quantitative methods — forecasting, spatial statistics, causal inference — in service of specific public health questions, to build evidence for policy on chronic disease and maternal &amp; child health.</p>
+<nav class="hero-links">
+<a href="mailto:merafhaileslassie@gmail.com">merafhaileslassie@gmail.com</a>
+<a href="https://github.com/meraf255" target="_blank" rel="noopener">github.com/meraf255</a>
+<a href="Meraf_Haileslassie_PhD_resume.pdf" target="_blank" rel="noopener" class="resume-link">Download CV ↓</a>
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="section interests" id="interests">
+<div class="wrap">
+<p class="section-label">01 — Research Interests</p>
+<p class="project-desc">My interest in this space grew directly out of my coursework and work experience — from modeling healthcare access disparities among Medicaid beneficiaries, to forecasting the drivers of rising U.S. healthcare spending with time series and VAR models. That work in a spatial statistics lab, estimating uncertainty in glacier volume loss, taught me that a number means little without a defensible account of how sure you are of it — a lesson that shapes how I approach health data now. What draws me to a PhD is using well-established quantitative methods in service of a specific public health question, rather than developing the methods themselves, to generate evidence that can inform real policy decisions at a state, national, or global level, on chronic disease and maternal &amp; child health, including in low- and middle-income countries.</p>
+<ul class="tag-row">
+<li>Public health policy &amp; evidence</li>
+<li>Maternal &amp; child health</li>
+<li>Chronic disease</li>
+<li>Global health / LMICs</li>
+<li>Health economics</li>
+<li>Race &amp; income disparities</li>
+<li>Spatial statistics</li>
+</ul>
+</div>
+</section>
+
+<section class="section projects" id="research">
+<div class="wrap">
+<p class="section-label">02 — Research &amp; Projects</p>
+
+<article class="project featured">
+<div class="project-meta">
+<span class="project-date">Jun – Dec 2023</span>
+<span class="project-tag">Spatial Statistics</span>
+</div>
+<h3>Spatial Statistical Analysis of Glacier Volume Change</h3>
+<p>St. Olaf College, Statistics Department — with Prof. Laura Boehm Vock, via the Collaborative Undergraduate Research &amp; Inquiry (CURI) program</p>
+<p class="project-desc">Adapted and synthesized spatial statistical methods from multiple prior studies to estimate total volume change of Storglaciären, an internationally studied glacier in northern Sweden. Estimated and propagated error through Digital Elevation Models (DEMs) to quantify accuracy, precision, and uncertainty in volume-change calculations. Culminated in a co-authored research paper and presentation through CURI.</p>
+<button class="abstract-link" data-modal="abs-glacier">Read abstract</button>
+</article>
+
+<article class="project featured">
+<div class="project-meta">
+<span class="project-date">2023 – 2024</span>
+<span class="project-tag">Health Policy &amp; Equity</span>
+</div>
+<h3>Access to Healthcare Services among Medicaid Beneficiaries</h3>
+<p>with Wonu Falae · St. Olaf College</p>
+<p class="project-desc">Modeled the relationship between ethnicity, gender, and access to healthcare among Medicaid beneficiaries using multiple linear regression, logistic regression, stepwise selection, and lasso/ridge regression with cross-validation. Identified health status, program enrollment, and utilization — not ethnicity or gender — as the strongest predictors of access, a finding with direct implications for how enrollment policy shapes who gets care.</p>
+<button class="abstract-link" data-modal="abs-medicaid">Read abstract</button>
+</article>
+
+<article class="project featured">
+<div class="project-meta">
+<span class="project-tag">Global Health</span>
+</div>
+<h3>A Dynamic Model of Conflict &amp; Resolution Strategies in Refugee Camps</h3>
+<p>with Aya Elawad · St. Olaf College</p>
+<p class="project-desc">Built a system of differential equations, adapting the Lotka-Volterra predator-prey model, to model how conflict escalates in refugee camps and how negotiation, mediation, and arbitration strategies change outcomes over time — motivated by wanting to present refugees as active participants in their own integration and peace-building, rather than as sources of instability. Focused on the South Sudanese and Ethiopian refugee crises and Uganda's role as host country.</p>
+<button class="abstract-link" data-modal="abs-refugee">Read abstract</button>
+</article>
+
+<article class="project featured">
+<div class="project-meta">
+<span class="project-tag">Multilevel Modeling</span>
+</div>
+<h3>Bay County Box Turtle Project: Ecological Recovery After Hurricane Michael</h3>
+<p>Independent analysis, using data from the Bay County, FL citizen-science box turtle monitoring program</p>
+<p class="project-desc">Built a multilevel regression model to account for repeated measurements on the same tagged turtles over time, examining how years since Hurricane Michael, air temperature, and movement stationarity relate to turtle shell length — a proxy for individual health. Found that turtles captured later, at higher temperatures, and while moving tended to be significantly larger, contrary to the initial hypothesis that stationary turtles would show better growth.</p>
+<button class="abstract-link" data-modal="abs-turtle">Read abstract</button>
+</article>
+
+<div class="project-grid">
+<article class="project">
+<div class="project-meta">
+<span class="project-tag">Machine Learning</span>
+</div>
+<h3>Handwritten Digit Classification</h3>
+<p class="project-desc">Built and compared LDA, QDA, logistic regression, multinomial regression, and cross-validated KNN models, using custom feature engineering and hyperparameter tuning. Diagnosed performance tradeoffs via confusion matrix analysis as classification complexity increased.</p>
+<button class="abstract-link" data-modal="abs-digits">Read abstract</button>
+</article>
+
+<article class="project">
+<div class="project-meta">
+<span class="project-tag">Biochemistry</span>
+</div>
+<h3>Substrate Specificity of Yeast Alcohol Dehydrogenase</h3>
+<p class="project-desc">With Will Asinger and Calvin Reyes, Math 236: Mathematics of Biology. Investigated yeast alcohol dehydrogenase (ADH) activity across four straight-chain alcohols using the Michaelis-Menten model fit by nonlinear regression, comparing binding affinity (Km) and enzyme turnover (Vmax) as alcohol chain length increased.</p>
+<button class="abstract-link" data-modal="abs-adh">Read abstract</button>
+</article>
+
+<article class="project">
+<div class="project-meta">
+<span class="project-tag">Global Health</span>
+</div>
+<h3>Global Air Quality &amp; Health Analysis</h3>
+<p class="project-desc">With Wonu Falae. Built an interactive R Shiny dashboard analyzing global air pollution, mortality, population, and literacy data (2010–2017) from WHO, World Bank, and Kaggle sources, with geographic visualizations of air quality patterns.</p>
+<button class="abstract-link" data-modal="abs-airquality">Read abstract</button>
+</article>
+
+<article class="project">
+<div class="project-meta">
+<span class="project-tag">Health Economics</span>
+</div>
+<h3>Specialty Intensity Score for Care Coordination</h3>
+<p class="project-desc">Developed an inpatient and outpatient Specialty Intensity Score to evaluate care coordination. Processed Limited Data Set (LDS) Medicare claims data in R to build a provider-diagnosis network.</p>
+</article>
+
+<article class="project">
+<div class="project-meta">
+<span class="project-tag">Health Economics</span>
+</div>
+<h3>Healthcare Spending &amp; Time Series Forecasting</h3>
+<p class="project-desc">Investigated drivers of rising U.S. healthcare costs. Built a structural VAR model to quantify the relationship between personal consumption factors and healthcare spending trends.</p>
+<button class="abstract-link" data-modal="abs-varhealth">Read abstract</button>
+</article>
+
+<article class="project">
+<div class="project-meta">
+<span class="project-tag">Behavioral Economics</span>
+</div>
+<h3>Food Waste Reduction Strategy</h3>
+<p class="project-desc">Applied game theory and behavioral economic principles to design food-waste reduction strategies for cafeteria sustainability initiatives.</p>
+<button class="abstract-link" data-modal="abs-foodwaste">Read abstract</button>
+</article>
+</div>
+
+</div>
+</section>
+
+<section class="section experience" id="experience">
+<div class="wrap">
+<p class="section-label">03 — Experience</p>
+<ol class="timeline">
+<li>
+<span class="tl-date">May 2025 — Present</span>
+<div>
+<h4>Business Intelligence Report Developer</h4>
+<p>American Dairy Queen Corporation, Bloomington, MN</p>
+<p class="tl-desc">Streamline audit-combination processes using Power BI, Databricks, and Excel VBA across finance, food safety, marketing, and operations. Participate in the Inclusive Culture Council to help sustain DEI initiatives.</p>
+</div>
+</li>
+<li>
+<span class="tl-date">Jan — May 2025</span>
+<div>
+<h4>Data Science Intern</h4>
+<p>Darcy Solutions Inc, Minneapolis, MN</p>
+<p class="tl-desc">Built a scalable Power Apps solution to automate tracking of well-building projects, and an alert system for heat exchanger efficiency across sites.</p>
+</div>
+</li>
+<li>
+<span class="tl-date">Jun — Aug 2024</span>
+<div>
+<h4>Global Data Insight &amp; Analytics Intern</h4>
+<p>Ford Motor Company, Dearborn, MI</p>
+<p class="tl-desc">Applied feature engineering to forecast and mitigate premium freight events across the supply chain.</p>
+</div>
+</li>
+<li>
+<span class="tl-date">Jun — Aug 2022</span>
+<div>
+<h4>Labor Productivity &amp; Benchmarking Intern</h4>
+<p>Allina Health, Minneapolis, MN</p>
+<p class="tl-desc">Analyzed quarterly productivity reports to help managers benchmark hospital productivity system-wide.</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+
+<section class="section skills" id="skills">
+<div class="wrap">
+<p class="section-label">04 — Education &amp; Skills</p>
+<div class="skills-grid">
+<div>
+<h4>Education</h4>
+<p>B.A. Mathematics; Quantitative Economics; Data Science &amp; Statistics<br>St. Olaf College, 2021–2024</p>
+</div>
+<div>
+<h4>Statistical Methods</h4>
+<p>Spatial statistics · time series / VAR modeling · regression &amp; logistic regression · LDA / QDA · KNN · lasso/ridge regression · cross-validation · error propagation · causal inference</p>
+</div>
+<div>
+<h4>Technical</h4>
+<p>R · Python · SQL · Power BI · Databricks · Alteryx · QlikSense · Excel (VBA) · Power Apps · R Shiny</p>
+</div>
+<div>
+<h4>Languages</h4>
+<p>English (fluent) · Amharic (fluent)</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="wrap">
+<p>Minneapolis, MN &nbsp;·&nbsp; <a href="mailto:merafhaileslassie@gmail.com">merafhaileslassie@gmail.com</a> &nbsp;·&nbsp; <a href="https://github.com/meraf255" target="_blank" rel="noopener">GitHub</a></p>
+</div>
+</footer>
+
+<!-- Abstract modals -->
+<div class="abstract-overlay" id="overlay">
+  <div class="abstract-modal" role="dialog" aria-modal="true">
+    <button class="abstract-close" aria-label="Close">×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<div id="abstracts-data" hidden>
+
+  <div id="abs-glacier" data-tag="Spatial Statistics" data-title="Spatial Statistical Analysis of Glacier Volume Change">
+    We investigate the volume loss of Storglaciären, an internationally studied glacier in northern Sweden, and address how to quantify uncertainty in that estimate when spatial correlation is present in the underlying elevation data. Using Digital Elevation Models (DEMs) derived from LiDAR and photogrammetry, we co-registered surface elevation surveys from different time points, reducing systematic bias (NMAD from 3.4m to 2.5m). We addressed data voids using McNabb's (2019) void-filling approach and hypsometric interpolation, binning elevation by 50m intervals and fitting a third-order polynomial model to predict missing values. This pipeline produces an elevation-difference map showing where the glacier has thinned most severely, laying the groundwork for a subsequent uncertainty estimate of total volume change that accounts for spatial correlation in the data — with the ultimate goal of writing this work up as an academic research paper.
+  </div>
+
+  <div id="abs-medicaid" data-tag="Health Policy &amp; Equity" data-title="Access to Healthcare Services among Medicaid Beneficiaries">
+    In this research, we aim to explore the factors that influence Medicaid beneficiaries' access to healthcare. The data was sourced from the Applied Econometrics with R package. We utilized simple, multiple linear regression and logistic regression techniques to construct an analysis on the relationship between ethnicity and gender to access to health services. We employed stepwise, ridge and lasso regression to refine the model and identify other significant variables. Through our analysis we provide evidence that age, children, and first and second principal health components have some correlation with access to health services. Additionally, we uncovered a possible interaction effect between income and ethnicity, length of observation and ethnicity, and number of visits and ethnicity.
+  </div>
+
+  <div id="abs-refugee" data-tag="Global Health" data-title="A Dynamic Model of Conflict &amp; Resolution Strategies in Refugee Camps">
+    In our study, we integrated and enhanced the predator-prey model (Lotka-Volterra equations) to highlight the importance of targeted interventions and ongoing monitoring to promote lasting peace. We modeled the level of conflict in refugee camps and level of effort (effectiveness) of conflict resolution strategies, addressing resource limitation, carrying capacity, and a nonlinear term to indicate larger conflicts require disproportionately more effort to resolve. We compared three resolution strategies — negotiation, mediation, and arbitration — adjusting parameters based on the nature of the conflict and resources required. Focused on the South Sudanese and Ethiopian refugee crises and Uganda's role as host country, this project challenges the stigma surrounding refugees by presenting them not as sources of instability but as active participants in their own integration and peace-building processes.
+  </div>
+
+  <div id="abs-turtle" data-tag="Multilevel Modeling" data-title="Bay County Box Turtle Project">
+    We investigate the health, habitat use, and movement patterns of box turtles in Bay County, Florida, to understand ecological recovery following Hurricane Michael's 2018 habitat destruction. Using a multilevel regression model to account for repeated measurements on the same turtles over time, we analyzed 608 observations from 441 individually tagged turtles, examining how straight carapace length — a proxy for turtle health — relates to years since the hurricane, air temperature, and movement stationarity. We found that turtles captured later after the hurricane, at higher air temperatures, and while moving (rather than stationary) tended to have significantly larger carapace length, contrary to our initial expectation that stationary turtles would show better growth. These findings, while not causal, suggest environmental recovery and turtle mobility are linked, and point to further questions about how researchers can support both box turtle recovery and broader ecological recovery in the region.
+  </div>
+
+  <div id="abs-adh" data-tag="Biochemistry" data-title="Substrate Specificity of Yeast Alcohol Dehydrogenase">
+    Insights into the catalytic mechanism of yeast alcohol dehydrogenase (ADH) by investigating its activity with various straight-chain primary alcohols. Focused on ethanol, methanol, 1-propanol, and 1-octanol, to compare binding affinity (Km) and enzyme turnover (Vmax). While previous research by Benner indicated that yeast ADH has a narrower substrate specificity and is most active with ethanol, we sought to expand the range of substrates and test how the increasing chain length of alcohols affects ADH reactivity. By employing the Michaelis-Menten model and conducting experiments with alcohol and NAD+ as substrates, we aimed to explore the reactivity patterns of yeast ADH.
+  </div>
+
+  <div id="abs-digits" data-tag="Machine Learning" data-title="Handwritten Digit Classification">
+    We build and compare classification models to distinguish handwritten digits from the MNIST dataset, starting with a binary classification task (2s vs. 4s) and later extending to three classes (2s, 4s, and 6s). Using a simple engineered feature — the count of empty (non-inked) pixels per image — we fit and compared LDA and QDA models, finding QDA achieved higher accuracy (76.5% vs. 68%). To improve performance further, we engineered a second feature based on fitting a logistic regression to each image's ink-pixel coordinates and extracting its AIC value, then compared logistic regression and cross-validated KNN models on this feature. The logistic regression model achieved 75.5% accuracy on the two-digit task, but performance dropped sharply (to 56.5%) once a third digit (6) was introduced, with 6s frequently confused for 2s and 4s. We use confusion matrix analysis throughout to diagnose exactly where and why misclassification occurs as task complexity increases.
+  </div>
+
+  <div id="abs-airquality" data-tag="Global Health" data-title="Global Air Quality &amp; Health Analysis">
+    We built an interactive dashboard exploring the relationship between air quality, pollution-related death rates, population, and literacy across countries from 2010 to 2017, drawing on data from WHO, the World Bank, and Kaggle. Our research questions asked how air quality relates to death rates over time, how population size relates to air quality, and whether these relationships differ by region in ways that reflect a country's developmental status. We visualize global AQI levels geographically, break down death rates by pollution source (indoor, outdoor particulate, and ozone) across regions and years, and examine population trends alongside AQI. We find that death rate and population are associated with a country's air quality, and that literacy rate is negatively related to AQI — higher-literacy countries tend to have better air quality, though we don't establish this as a causal relationship.
+  </div>
+
+  <div id="abs-varhealth" data-tag="Health Economics" data-title="Healthcare Spending &amp; Time Series Forecasting">
+    Motivated by the argument that rising U.S. healthcare costs, not entitlement spending, pose the greatest threat to long-term fiscal stability, this paper investigates how personal consumption expenditure on tobacco, insurance, and housing and utilities relates to healthcare spending. Using annual U.S. data from 1959–2022 sourced from the Bureau of Economic Analysis, we test each series for stationarity using the Phillips-Perron test, then estimate a structural vector autoregression (VAR) model on the first-differenced, log-transformed variables. Impulse response functions show that a 1% shock to tobacco expenditure produces a significant decrease in healthcare expenditure, and a shock to housing and utilities expenditure is associated with a decrease in insurance expenditure. Forecast error variance decomposition shows tobacco shocks explain roughly 12% of healthcare expenditure variation after four years, with implications for policy interventions aimed at reducing tobacco consumption through healthcare-spending incentives.
+  </div>
+  <div id="abs-foodwaste" data-tag="Behavioral Economics" data-title="Effective Strategies for Managing Food Waste Between Catering Businesses and College Institutions">
+    We examine food waste at St. Olaf College's cafeteria as a principal-agent problem between the catering company (Bon App) and individual students, and model students' food-tray decisions using a utility framework balancing hedonistic pleasure against the guilt of wasted food. We frame the overplating decision as a prisoner's dilemma game between an individual student and the collective student body, showing that policy interventions — a weight-based waste-tracking threshold, plate resizing, and awareness campaigns — can shift the payoff structure toward an assurance/stag-hunt game with a preferable, coordinated equilibrium where students consistently avoid overplating. Using comparative statics, we show that increased health consciousness among students is predicted to reduce the total amount of food placed on a tray. We conclude that combining communication between catering staff and students, threshold-based measurement, and targeted awareness campaigns — rather than any single intervention alone — offers the most promising path to reducing food waste in college cafeterias.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('overlay');
+  var modalContent = document.getElementById('modal-content');
+  var closeBtn = overlay.querySelector('.abstract-close');
+
+  document.querySelectorAll('[data-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = btn.getAttribute('data-modal');
+      var src = document.getElementById(id);
+      if (!src) return;
+      var tag = src.getAttribute('data-tag') || '';
+      var title = src.getAttribute('data-title') || '';
+      modalContent.innerHTML =
+        '<p class="am-tag">' + tag + '</p>' +
+        '<h3>' + title + '</h3>' +
+        '<p>' + src.innerHTML.trim() + '</p>';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeModal();
+  });
+})();
+</script>
+
+</body>
+</html>
